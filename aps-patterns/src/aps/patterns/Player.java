@@ -5,7 +5,16 @@ import states.*;
 public class Player extends Observado {
     
     private State state;
+    private int score = 0;
+
+    public int getScore() {
+        return score;
+    }
     private int life = 100;
+
+    public int getLife() {
+        return life;
+    }
     
     public Player(){
         this.state = new Normal();
@@ -18,6 +27,10 @@ public class Player extends Observado {
             notificaTodos();
         }else
             state = new Normal();
+    }
+    
+    public void headshot(){
+         score = 50;
     }
     
     public void estado(){
